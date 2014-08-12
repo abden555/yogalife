@@ -16,19 +16,19 @@
             	<div class="col-lg-4 col-sm-4 col-xs-6">
                 	<img src="http://yogalifeme.com/android/images/cover/aunary-2014-COVER.jpg" class="img-responsive" data-rel="external"><br>
                     <div class="text-center">
-                    <span class="h4">Jan 2014</span>&nbsp;&nbsp;<a href="" onclick="window.open('http://docs.google.com/viewer?url=http://yogalifeme.com/android/images/content/januayissue.pdf')" class="btn btn-sm btn-success">Free</a>
+                    <span class="h4">Jan 2014</span>&nbsp;&nbsp;<a href="" onclick="openPDF()" class="btn btn-sm btn-success">Free</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-4 col-xs-6">
                 	<img src="http://yogalifeme.com/android/images/cover/Febuary-2014-COVER.jpg" class="img-responsive" data-rel="external"><br>
                     <div class="text-center">
-                    <span class="h4">Jan 2014</span>&nbsp;&nbsp;<a href="" onclick="window.open('http://docs.google.com/viewer?url=http://yogalifeme.com/android/images/content/januayissue.pdf')" class="btn btn-sm btn-success">Free</a>
+                    <span class="h4">Jan 2014</span>&nbsp;&nbsp;<a href="" onclick="openPDF()" class="btn btn-sm btn-success">Free</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-4 col-xs-6">
                 	<img src="http://yogalifeme.com/android/images/cover/March-2014-COVER.jpg" class="img-responsive" data-rel="external"><br>
                     <div class="text-center">
-                    <span class="h4">Jan 2014</span>&nbsp;&nbsp;<a href="" onclick="window.open('http://docs.google.com/viewer?url=http://yogalifeme.com/android/images/content/januayissue.pdf')" class="btn btn-sm btn-success">Free</a>
+                    <span class="h4">Jan 2014</span>&nbsp;&nbsp;<a href="" onclick="openPDF()" class="btn btn-sm btn-success">Free</a>
                     </div>
                 </div>
             </div>
@@ -38,6 +38,14 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript">
             app.initialize();
+			
+			function openPDF() {
+				 var ref = window.open('http://docs.google.com/viewer?url=http://yogalifeme.com/android/images/content/januayissue.pdf', '_system', 'location=yes');
+				 ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+				 ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+				 ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+				 ref.addEventListener('exit', function(event) { alert(event.type); });
+			}
         </script>
     </body>
 </html>
