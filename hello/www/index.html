@@ -40,6 +40,7 @@
             app.initialize();
 			
 			function openPDF() {
+				alert('yes');
 				 var ref = window.open('http://docs.google.com/viewer?url=http://yogalifeme.com/android/images/content/januayissue.pdf', '_system', 'location=yes');
 				 ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
 				 ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
