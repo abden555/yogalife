@@ -33,16 +33,23 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/cordova-1.9.0.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        
+        
         <script type="text/javascript">
             app.initialize();
-			
+			document.addEventListener("deviceready", onDeviceReady, false);
+
 			function openPDF() {
 				 alert('yes');
 				 var pdfLink = 'http://yogalifeme.com/android/images/content/Jaunary2014.pdf'
-				 window.plugins.childBrowser.showWebPage(encodeURI("http://docs.google.com/viewer?url=" + pdfLink + ""));
+				 var ref = window.open(pdfLink, '_blank', 'location=yes');
+				 ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+				 ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+				 ref.addEventListener('exit', function() { alert(event.type); });
+
 			}
         </script>
     </body>
